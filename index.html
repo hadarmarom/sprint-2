@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>MY MEME SITE </title>
+</head>
+
+<body onload="init()">
+
+    <header>
+        <div class="flex space-between align-items-center main-header">
+            <div class="logo flex capitalized padding-left" onclick="onCloseModal()">meme page</div>
+            <ul class="main-nav flex space-between align-items-center clean-list">
+                <li>
+                    <a class="nav-link flex space-between align-items-center capitalized text-decoration "
+                        href="#">gallery</a>
+                </li>
+                <li>
+                    <a class="nav-link flex space-between align-items-center capitalized text-decoration "
+                        href="#">meme</a>
+                </li>
+                <li>
+                    <a class="nav-link flex space-between align-items-center capitalized text-decoration "
+                        href="#">about</a>
+                </li>
+            </ul>
+        </div>
+        <div class="search-bar">
+
+
+        </div>
+    </header>
+    <main class="main-container">
+        <div class="edit-canvas-container flex hidden">
+            <div class="canvas-container ">
+                <canvas id="my-canvas" height="500" width="500"></canvas>
+                <!-- <canvas id="my-canvas" height="500" width="500" onclick="draw(event)"></canvas> -->
+            </div>
+            <div class="edit-meme-container ">
+                <form onsubmit="onForm(event)" id="formPrefs">
+                    <label for="text">text:</label>
+                    <input class="input-text" type="text" id="text" name="text">
+                    <input class="input-color" type="color" id="color" name="color">
+                    <div class="chosen-side"></div>
+                    <div class="chosen-font-Size"></div>
+                    <button>Sumbit</button>
+                </form>
+                <button onclick="onChangeTextAlign(1)">present left</button>
+                <button onclick="onChangeTextAlign(2)">present center</button>
+                <button onclick="onChangeTextAlign(0)">present right</button>
+                <button onclick="onChangeTextfont(+2)">bigger Font</button>
+                <button onclick="onChangeTextfont(-2)">smaller Font</button>
+            </div>
+        </div>
+        <div class="images-wrapper grid padding-left">
+            <!-- all pics get in here -->
+        </div>
+    </main>
+    <script src="js/util.js"></script>
+    <script src="js/mouse.js"></script>
+    <script src="js/service.js"></script>
+    <script src="js/controller.js"></script>
+</body>
+
+</html>
